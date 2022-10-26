@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoke</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <p class="text">
+            Я могу не спать всю ночь,переживая о людях,
+            которые совершенно не думают обо мне и помогать тем,
+            кто не могут помочь самим себе. Все думают, что я идеально вписываюсь в любую компанию,
+            потому что я всем нравлюсь, но на самом деле мне кажется, что я не вписываюсь никуда.
+            Людям просто нравится, что я готов помочь и выслушать.
+            Своего рода бесплатный психолог, который всегда будет разделять чувства людей вокруг себя,
+            но которого никто и никогда не будет пытаться понять на самом деле.
+        </p>
+    </section>
+    <script>
+
+        // split text into letters
+        
+        const text = document.querySelector('.text');
+        text.innerHTML = text.textContent.replace(/\S/g,"<span>$&</span>");
+
+        // add active class on hovered <span> tag
+
+        const letters = document.querySelectorAll('span');
+        for(let i = 0; i < letters.length; i++)
+        {
+            letters[i].addEventListener("mouseover", function(){
+                letters[i].classList.add('active')
+            })
+        }
+    </script>
+</body>
+</html>
